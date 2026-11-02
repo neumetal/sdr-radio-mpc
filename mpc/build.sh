@@ -32,6 +32,8 @@ esac
 [ -d "$HERE/$PORT" ] || { echo "error: mpc/$PORT isn't in this checkout" >&2; exit 1; }
 # The GitHub repo the release zip names (its catalog source_repo): mpc/REPO, or $SDR_REPO.
 REPO="${SDR_REPO:-$(cat "$HERE/REPO" 2>/dev/null || true)}"
+# The CPU bench result the release records (mpc-vst-plugins tools/bench.sh ... -j on a Gen1 device): <port>/bench.json.
+BENCH=""; [ -f "$HERE/$PORT/bench.json" ] && BENCH="$HERE/$PORT/bench.json"
 VST="$HERE/$PORT"
 GEN="$VST/build"
 OBJ="$HERE/obj/$PORT"
@@ -135,6 +137,7 @@ cp "$MV/LICENSE"              "$LIC/mpc-vst-plugins-MIT.txt"
 VERSION="$(cat "$VERSION_FILE")"
 python3 "$MV/tools/release.py" --so "$OBJ/$SO" --skin "$GEN/skin/$NAME" --entry "$GEN/pluginlist-entry.xml" \
     --version "$VERSION" --extra "$LIC:LICENSES" --license GPL-2.0-or-later --id "$ID" ${REPO:+--repo "$REPO"} \
+    ${BENCH:+--bench "$BENCH"} \
     --about "$ABOUT" \
     --requires "An RTL-SDR dongle in the MPC's USB port" -o "$DIST"
 
