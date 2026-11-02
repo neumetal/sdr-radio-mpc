@@ -1,0 +1,5 @@
+# Build output
+mpc/obj/
+mpc/dist/
+mpc/vst/build/
+.DS_Store

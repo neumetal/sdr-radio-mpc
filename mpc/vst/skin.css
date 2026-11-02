@@ -1,0 +1,20 @@
+/* SDR Radio skin artwork (mpc-vst-plugins tools/html_art.py, loaded after its
+ * default.css). The desktop plugin's look: near-black panels, an amber LCD,
+ * and text sized to read on the MPC's screen. */
+:root {
+  --title-size: 24px;
+  --label-size: 20px;
+  --seg-size: 26px;
+  --button-size: 24px;
+  --radius: 8px;
+  --sheen: 0.05;
+}
+
+.frame-border { fill: var(--panel); stroke: var(--line); stroke-width: 2; rx: 10px; }
+.frame-title { fill: var(--accent); letter-spacing: 0.08em; }
+.box { fill: var(--lcd); stroke: #26292f; stroke-width: 2; rx: 8px; }
+.box-label { fill: var(--ink-dim); }
+.seg-tx { font-weight: 700; }
+.button-tx { font-weight: 700; }
+.tile { rx: 8px; }
+.tile-border { stroke-width: 2; rx: 8px; }

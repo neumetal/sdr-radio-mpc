@@ -1,0 +1,5 @@
+{ "id": "sdr-radio", "name": "SDR Radio", "author": "neumetal", "repo": "neumetal/sdr-radio-mpc",
+  "kind": "instrument", "license": "GPL-2.0-or-later", "style": "utility",
+  "tags": ["radio", "rtl-sdr", "scanner", "fm", "am", "found-sound"],
+  "summary": "Live FM, AM and narrow-FM radio from an RTL-SDR dongle in the MPC's USB port: presets, 14 bands scanned on the beat or by squelch, and Saved / Blocked channels shared by every project. Needs an RTL-SDR dongle (the Blog V4 adds AM broadcast and shortwave).",
+  "screenshot": "https://raw.githubusercontent.com/neumetal/sdr-radio-mpc/v0.5.0/docs/screenshot.png" }

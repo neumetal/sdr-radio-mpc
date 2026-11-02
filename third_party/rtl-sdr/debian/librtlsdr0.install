@@ -1,0 +1,2 @@
+usr/lib/*/lib*.so.*
+debian/org.osmocom.librtlsdr.metainfo.xml usr/share/metainfo

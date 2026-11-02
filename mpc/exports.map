@@ -1,0 +1,3 @@
+/* Export only the VST2 entry point. Everything else (libusb, librtlsdr,
+   libc++) stays private, so it cannot clash with libraries MPC loads. */
+{ global: VSTPluginMain; local: *; };

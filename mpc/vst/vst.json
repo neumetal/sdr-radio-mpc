@@ -1,0 +1,21 @@
+{
+  "name": "SDR Radio",
+  "vendor": "SdrLab",
+  "uid": "Sdr1",
+  "version": 1000,
+  "so": "sdr_radio.so",
+  "params": "params.json",
+  "defines": {
+    "HAS_SONG_POS": 1,
+    "PARAM_TEXT_MAX": 64,
+    "MODULE_SUBDIR": "\".\""
+  },
+  "build": {
+    "root": "..",
+    "sources": [
+      "src/sdr_mpc_engine.cpp"
+    ]
+  },
+  "layout": "layout.conf",
+  "art": "html"
+}

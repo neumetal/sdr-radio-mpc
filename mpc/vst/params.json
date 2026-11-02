@@ -1,0 +1,605 @@
+{
+  "name": "SDR Radio",
+  "params": [
+    {
+      "key": "mhz",
+      "name": "MHz",
+      "min": 0,
+      "max": 1766,
+      "default": 100,
+      "display": "int",
+      "nudge_pct": 10
+    },
+    {
+      "key": "khz",
+      "name": "kHz",
+      "min": 0,
+      "max": 999,
+      "default": 100,
+      "display": "int",
+      "nudge_pct": 10
+    },
+    {
+      "key": "tune_down",
+      "name": "Step Down",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "tune_up",
+      "name": "Step Up",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "mode",
+      "name": "Mode",
+      "options": [
+        "FM",
+        "AM",
+        "NFM"
+      ],
+      "default": 0
+    },
+    {
+      "key": "mode_auto",
+      "name": "Auto Mode",
+      "options": [
+        "Off",
+        "On"
+      ],
+      "default": 1
+    },
+    {
+      "key": "agc",
+      "name": "Auto Gain",
+      "options": [
+        "Off",
+        "On"
+      ],
+      "default": 1
+    },
+    {
+      "key": "gain",
+      "name": "RF Gain",
+      "min": 0,
+      "max": 49.6,
+      "default": 30,
+      "unit": "dB"
+    },
+    {
+      "key": "level",
+      "name": "Level",
+      "min": 0,
+      "max": 2,
+      "default": 1
+    },
+    {
+      "key": "freq_text",
+      "name": "Frequency",
+      "display": "string"
+    },
+    {
+      "key": "info",
+      "name": "Mode / Band",
+      "display": "string"
+    },
+    {
+      "key": "status",
+      "name": "Status",
+      "display": "string"
+    },
+    {
+      "key": "signal",
+      "name": "Signal",
+      "display": "string"
+    },
+    {
+      "key": "preset_1",
+      "name": "Preset 1",
+      "display": "string"
+    },
+    {
+      "key": "preset_2",
+      "name": "Preset 2",
+      "display": "string"
+    },
+    {
+      "key": "preset_3",
+      "name": "Preset 3",
+      "display": "string"
+    },
+    {
+      "key": "preset_4",
+      "name": "Preset 4",
+      "display": "string"
+    },
+    {
+      "key": "preset_5",
+      "name": "Preset 5",
+      "display": "string"
+    },
+    {
+      "key": "preset_6",
+      "name": "Preset 6",
+      "display": "string"
+    },
+    {
+      "key": "preset_7",
+      "name": "Preset 7",
+      "display": "string"
+    },
+    {
+      "key": "preset_8",
+      "name": "Preset 8",
+      "display": "string"
+    },
+    {
+      "key": "store",
+      "name": "Store Preset",
+      "options": [
+        "Off",
+        "On"
+      ],
+      "default": 0
+    },
+    {
+      "key": "scan_on",
+      "name": "Scan",
+      "options": [
+        "Off",
+        "On"
+      ],
+      "default": 0
+    },
+    {
+      "key": "scan_src",
+      "name": "Scan Source",
+      "options": [
+        "All",
+        "Presets",
+        "Saved",
+        "New"
+      ],
+      "default": 0
+    },
+    {
+      "key": "scan_style",
+      "name": "Scan Style",
+      "options": [
+        "Beat",
+        "Squelch"
+      ],
+      "default": 0
+    },
+    {
+      "key": "scan_rate",
+      "name": "Scan Every",
+      "options": [
+        "1 beat",
+        "2 beats",
+        "1 bar",
+        "2 bars",
+        "4 bars",
+        "8 bars"
+      ],
+      "default": 2
+    },
+    {
+      "key": "scan_random",
+      "name": "Scan Random",
+      "options": [
+        "Off",
+        "On"
+      ],
+      "default": 0
+    },
+    {
+      "key": "scan_sql",
+      "name": "Squelch",
+      "min": 3,
+      "max": 30,
+      "default": 8,
+      "unit": "dB"
+    },
+    {
+      "key": "tempo",
+      "name": "Tempo (no host)",
+      "min": 40,
+      "max": 240,
+      "default": 120,
+      "display": "int"
+    },
+    {
+      "key": "scan_skip",
+      "name": "Skip",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "scan_survey",
+      "name": "Find Active",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "scan_text",
+      "name": "Scan Status",
+      "display": "string"
+    },
+    {
+      "key": "band_1",
+      "name": "Scan FM Broadcast",
+      "display": "string"
+    },
+    {
+      "key": "band_2",
+      "name": "Scan AM Broadcast",
+      "display": "string"
+    },
+    {
+      "key": "band_3",
+      "name": "Scan Air (aviation)",
+      "display": "string"
+    },
+    {
+      "key": "band_4",
+      "name": "Scan NOAA Weather",
+      "display": "string"
+    },
+    {
+      "key": "band_5",
+      "name": "Scan Marine VHF",
+      "display": "string"
+    },
+    {
+      "key": "band_6",
+      "name": "Scan Railroad",
+      "display": "string"
+    },
+    {
+      "key": "band_7",
+      "name": "Scan Emergency VHF",
+      "display": "string"
+    },
+    {
+      "key": "band_8",
+      "name": "Scan Emergency UHF",
+      "display": "string"
+    },
+    {
+      "key": "band_9",
+      "name": "Scan GMRS / FRS",
+      "display": "string"
+    },
+    {
+      "key": "band_10",
+      "name": "Scan Ham 2 m repeaters",
+      "display": "string"
+    },
+    {
+      "key": "band_11",
+      "name": "Scan Ham 70 cm repeaters",
+      "display": "string"
+    },
+    {
+      "key": "band_12",
+      "name": "Scan CB",
+      "display": "string"
+    },
+    {
+      "key": "band_13",
+      "name": "Scan Shortwave 120-41 m (best at night)",
+      "display": "string"
+    },
+    {
+      "key": "band_14",
+      "name": "Scan Shortwave 31-11 m (best by day)",
+      "display": "string"
+    },
+    {
+      "key": "list_1",
+      "name": "Channel 1",
+      "display": "string"
+    },
+    {
+      "key": "list_2",
+      "name": "Channel 2",
+      "display": "string"
+    },
+    {
+      "key": "list_3",
+      "name": "Channel 3",
+      "display": "string"
+    },
+    {
+      "key": "list_4",
+      "name": "Channel 4",
+      "display": "string"
+    },
+    {
+      "key": "list_5",
+      "name": "Channel 5",
+      "display": "string"
+    },
+    {
+      "key": "list_6",
+      "name": "Channel 6",
+      "display": "string"
+    },
+    {
+      "key": "list_7",
+      "name": "Channel 7",
+      "display": "string"
+    },
+    {
+      "key": "list_8",
+      "name": "Channel 8",
+      "display": "string"
+    },
+    {
+      "key": "list_9",
+      "name": "Channel 9",
+      "display": "string"
+    },
+    {
+      "key": "list_10",
+      "name": "Channel 10",
+      "display": "string"
+    },
+    {
+      "key": "list_11",
+      "name": "Channel 11",
+      "display": "string"
+    },
+    {
+      "key": "list_12",
+      "name": "Channel 12",
+      "display": "string"
+    },
+    {
+      "key": "list_13",
+      "name": "Channel 13",
+      "display": "string"
+    },
+    {
+      "key": "list_14",
+      "name": "Channel 14",
+      "display": "string"
+    },
+    {
+      "key": "list_15",
+      "name": "Channel 15",
+      "display": "string"
+    },
+    {
+      "key": "list_16",
+      "name": "Channel 16",
+      "display": "string"
+    },
+    {
+      "key": "list_17",
+      "name": "Channel 17",
+      "display": "string"
+    },
+    {
+      "key": "list_18",
+      "name": "Channel 18",
+      "display": "string"
+    },
+    {
+      "key": "list_19",
+      "name": "Channel 19",
+      "display": "string"
+    },
+    {
+      "key": "list_20",
+      "name": "Channel 20",
+      "display": "string"
+    },
+    {
+      "key": "list_21",
+      "name": "Channel 21",
+      "display": "string"
+    },
+    {
+      "key": "list_22",
+      "name": "Channel 22",
+      "display": "string"
+    },
+    {
+      "key": "list_23",
+      "name": "Channel 23",
+      "display": "string"
+    },
+    {
+      "key": "list_24",
+      "name": "Channel 24",
+      "display": "string"
+    },
+    {
+      "key": "list_prev",
+      "name": "List Page Back",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "list_next",
+      "name": "List Page On",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "list_add",
+      "name": "Keep",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "list_block",
+      "name": "Block",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "list_clear",
+      "name": "Clear",
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "momentary": true
+    },
+    {
+      "key": "list_view",
+      "name": "Show",
+      "options": [
+        "Saved",
+        "Blocked"
+      ],
+      "default": 0
+    },
+    {
+      "key": "list_text",
+      "name": "Saved Channels",
+      "display": "string"
+    },
+    {
+      "key": "chan_state",
+      "name": "Channel",
+      "display": "string"
+    },
+    {
+      "key": "hint_text",
+      "name": "Source Hint",
+      "display": "string"
+    },
+    {
+      "key": "count_text",
+      "name": "Channel Counts",
+      "display": "string"
+    }
+  ],
+  "sections": [
+    {
+      "label": "Tuner",
+      "keys": [
+        "mhz",
+        "khz",
+        "tune_down",
+        "tune_up",
+        "mode",
+        "mode_auto",
+        "freq_text",
+        "info",
+        "status",
+        "signal"
+      ]
+    },
+    {
+      "label": "Receiver",
+      "keys": [
+        "agc",
+        "gain",
+        "level"
+      ]
+    },
+    {
+      "label": "Presets",
+      "keys": [
+        "preset_1",
+        "preset_2",
+        "preset_3",
+        "preset_4",
+        "preset_5",
+        "preset_6",
+        "preset_7",
+        "preset_8",
+        "store"
+      ]
+    },
+    {
+      "label": "Scan",
+      "keys": [
+        "scan_on",
+        "scan_src",
+        "scan_style",
+        "scan_rate",
+        "scan_random",
+        "scan_sql",
+        "tempo",
+        "scan_skip",
+        "scan_survey",
+        "scan_text",
+        "band_1",
+        "band_2",
+        "band_3",
+        "band_4",
+        "band_5",
+        "band_6",
+        "band_7",
+        "band_8",
+        "band_9",
+        "band_10",
+        "band_11",
+        "band_12",
+        "band_13",
+        "band_14"
+      ]
+    },
+    {
+      "label": "Saved and blocked",
+      "keys": [
+        "list_1",
+        "list_2",
+        "list_3",
+        "list_4",
+        "list_5",
+        "list_6",
+        "list_7",
+        "list_8",
+        "list_9",
+        "list_10",
+        "list_11",
+        "list_12",
+        "list_13",
+        "list_14",
+        "list_15",
+        "list_16",
+        "list_17",
+        "list_18",
+        "list_19",
+        "list_20",
+        "list_21",
+        "list_22",
+        "list_23",
+        "list_24",
+        "list_prev",
+        "list_next",
+        "list_add",
+        "list_block",
+        "list_clear",
+        "list_view",
+        "list_text",
+        "chan_state",
+        "hint_text",
+        "count_text"
+      ]
+    }
+  ]
+}
